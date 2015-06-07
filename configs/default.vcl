@@ -8,7 +8,7 @@ acl purge {
 	"127.0.0.1";
 	"localhost";
 }
-
+sub vcl_recv {
 # Compatibility with Apache format log
 	if (req.restarts == 0) {
  		if (req.http.x-forwarded-for) {
